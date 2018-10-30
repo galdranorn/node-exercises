@@ -9,13 +9,19 @@ process.stdin.on('readable', function() {
     	// define instruction var
     	var instruction = input.toString().trim();
     	// if instruction is exit - quit the app and write it
-    	if (instruction==='/exit') {
-    		process.stdout.write('Quitting the app...\n');
-    		process.exit();
-    	}
+    	switch (instruction) {
+    		case 'exit':
+	    		process.stdout.write('Quitting the app...\n');
+	    		process.exit();
+    		case 'ver':
+    			process.stdout.write(process.versions.node);
+    			process.exit();
+    		default: 
+    			process.stdout.write('Wrong command\n');
+    	}	
         // if instruction is not exit - show error
-        else {
-           process.stdout.write('Wrong command\n');
-        }
+        //else {
+        //   process.stderr.write('Wrong command\n');
+        //}
     }
 });
