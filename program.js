@@ -1,5 +1,4 @@
 process.stdin.setEncoding('utf-8');
-const os = require('os');
 
 process.stdin.on('readable', function() {
     // method .read() is reading what user gives as input
