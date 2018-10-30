@@ -1,4 +1,5 @@
 process.stdin.setEncoding('utf-8');
+const os = require('os');
 
 process.stdin.on('readable', function() {
     // method .read() is reading what user gives as input
@@ -16,12 +17,11 @@ process.stdin.on('readable', function() {
     		case 'ver':
     			process.stdout.write(process.versions.node);
     			process.exit();
+    		case 'lang':
+    			process.stdout.write(process.env.LANG);
+    			process.exit();
     		default: 
     			process.stdout.write('Wrong command\n');
     	}	
-        // if instruction is not exit - show error
-        //else {
-        //   process.stderr.write('Wrong command\n');
-        //}
     }
 });
