@@ -1,4 +1,5 @@
 var os = require('os');
+var colors = require('colors');
 
 function timeFormat() {
     var uptime = os.uptime();
