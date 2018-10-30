@@ -1,5 +1,5 @@
 {
-  "name": "learning-git",
+  "name": "y",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,12 +11,12 @@
     "init:files": "touch README.md index.html sass/style.scss js/script.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "build": "npm-run-all build:* test",
-    "build:clean": "./node_modules/.bin/rimraf css",
+    "build:clean": "rimraf css",
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watch": "npm-run-all build -p watch:*",
-    "watch:sassprefixer": "./node_modules/.bin/onchange sass/style.scss -- npm-run-all watchsp:*",
+    "watch:sassprefixer": "onchange sass/style.scss -- npm-run-all watchsp:*",
     "watchsp:sass": "node-sass --output-style expanded --source-map true -o css sass",
     "watchsp:autoprefixer": "autoprefixer-cli css/style.css",
     "watch:browsersync": "browser-sync start --server --files css/*.css *.html"
@@ -41,6 +41,7 @@
     "onchange": "^4.1.0"
   },
   "dependencies": {
+    "colors": "^1.3.2",
     "jquery-responsive-tables": "^2.0.1",
     "js-datepicker": "^3.3.2",
     "mkdirp": "^0.5.1",
